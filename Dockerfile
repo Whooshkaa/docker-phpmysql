@@ -1,7 +1,7 @@
 # Version 0.0.1
 FROM whooshkaa/docker-php:php7
 MAINTAINER Phil Dodd "tripper54@gmail.com"
-ENV LAST_UPDATED 2016-10-27
+ENV LAST_UPDATED 2016-10-28
 
 # mysql
 RUN apt-get install -y mysql-client mysql-server python-mysqldb
@@ -18,6 +18,7 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 #RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 ADD set-mysql-password.sh /tmp/set-mysql-password.sh
 RUN /bin/sh /tmp/set-mysql-password.sh
+RUN echo 'sql-mode="NO_ENGINE_SUBSTITUTION"' >>  /etc/mysql/mysql.conf.d/mysqld.cnf
 
 EXPOSE 80
 CMD ["/usr/bin/supervisord"]
