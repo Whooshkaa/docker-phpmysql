@@ -1,7 +1,6 @@
-# Version 0.0.1
 FROM whooshkaa/docker-php:php7
 MAINTAINER Phil Dodd "tripper54@gmail.com"
-ENV LAST_UPDATED 2016-10-28
+ENV LAST_UPDATED 2016-11-24
 
 # mysql
 RUN apt-get install -y mysql-client mysql-server python-mysqldb
