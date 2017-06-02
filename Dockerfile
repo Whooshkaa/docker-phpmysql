@@ -3,7 +3,7 @@ MAINTAINER Phil Dodd "phil@whooshkaa.com"
 ENV LAST_UPDATED 2017-06-02
 
 # mysql
-RUN apt-get install -y mysql-client mysql-server python-mysqldb
+RUN apt-get update && apt-get install -y mysql-client mysql-server python-mysqldb
 
 #Create directories for lock files
 RUN  mkdir -p /var/run/mysqld
