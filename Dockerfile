@@ -1,6 +1,6 @@
 FROM whooshkaa/docker-php:latest
 MAINTAINER Phil Dodd "phil@whooshkaa.com"
-ENV LAST_UPDATED 2017-06-16
+ENV LAST_UPDATED 2017-08-22
 
 # mysql
 RUN apt-get update && apt-get install -y mysql-client mysql-server python-mysqldb
