@@ -20,7 +20,7 @@ ADD set-mysql-password.sh /tmp/set-mysql-password.sh
 RUN echo 'sql-mode="NO_ENGINE_SUBSTITUTION"' >>  /etc/mysql/mysql.conf.d/mysqld.cnf
 # Allow remote connections (for the api app)
 RUN sed -i -e 's/bind-address/#bind-address/g' /etc/mysql/mysql.conf.d/mysqld.cnf
-RUN /bin/sh /tmp/set-mysql-password.sh
+RUN /tmp/set-mysql-password.sh
 
 EXPOSE 80
 CMD ["/usr/bin/supervisord"]
